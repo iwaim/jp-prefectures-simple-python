@@ -1,6 +1,6 @@
 [project]
 name = "jp_prefectures_simple"
-version = "0.1.0"
+version = "0.2.0"
 authors = [
   { name="IWAI, Masaharu", email="iwaim.sub@gmail.com" },
 ]
