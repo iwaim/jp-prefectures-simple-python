@@ -30,6 +30,7 @@ classifiers = [
 Documentation = "https://github.com/iwaim/jp-prefectures-simple-python"
 Source = "https://github.com/iwaim/jp-prefectures-simple-python"
 Tracker = "https://github.com/iwaim/jp-prefectures-simple-python/issues"
+Changelog = "https://github.com/iwaim/jp-prefectures-simple-python/blob/main/CHANGELOG.md"
 
 [build-system]
 requires = ["uv_build>=0.9.26,<0.10.0"]
