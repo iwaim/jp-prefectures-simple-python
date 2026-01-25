@@ -50,9 +50,9 @@ with resources.files("jp_prefectures_simple.data").joinpath(
 
 
 @overload
-def code2name(code: int) -> str: ...
-@overload
-def code2name(code: str) -> str: ...
+def code2name(code: int | str) -> str: ...
+
+
 @overload
 def code2name(code: list[int | str]) -> list[str]: ...
 
@@ -69,22 +69,24 @@ def code2name(code: int | str | list[int | str]) -> str | list[str]:
     Raises:
         KeyError: If the code is not found.
     """
-    ret = None
+    if isinstance(code, list):
+        return [code2name(c) for c in code]
+
     if isinstance(code, int):
         filled_code = str(code).zfill(2)
-        ret = _CODE2NAME[filled_code]
-    elif isinstance(code, str):
-        ret = _CODE2NAME[code]
-    elif isinstance(code, list):
-        ret = [code2name(c) for c in code]
-    else:
-        msg = f"Unsupported type: {type(code)}"
-        raise TypeError(msg)
-    return ret
+        return _CODE2NAME[filled_code]
+
+    if isinstance(code, str):
+        return _CODE2NAME[code]
+
+    msg = f"Unsupported type: {type(code)}"
+    raise TypeError(msg)
 
 
 @overload
 def name2code(name: str) -> str: ...
+
+
 @overload
 def name2code(name: list[str]) -> list[str]: ...
 
@@ -101,12 +103,11 @@ def name2code(name: str | list[str]) -> str | list[str]:
     Raises:
         KeyError: If the name is not found.
     """
-    ret = None
+    if isinstance(name, list):
+        return [name2code(n) for n in name]
+
     if isinstance(name, str):
-        ret = _NAME2CODE[name]
-    elif isinstance(name, list):
-        ret = [name2code(n) for n in name]
-    else:
-        msg = f"Unsupported type: {type(name)}"
-        raise TypeError(msg)
-    return ret
+        return _NAME2CODE[name]
+
+    msg = f"Unsupported type: {type(name)}"
+    raise TypeError(msg)
