@@ -4,6 +4,12 @@ Japanese prefecture names and JIS X 0401 codes converter.
 
 This package has no external dependencies.
 
+## Installation
+
+```bash
+pip install jp-prefectures-simple
+```
+
 ## Usage
 
 ```python
