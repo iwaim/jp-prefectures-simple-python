@@ -31,20 +31,21 @@ Examples:
 """
 
 import json
-from pathlib import Path
+from importlib import resources
 from typing import overload
 
 __all__ = ["code2name", "name2code"]
 
-_JSON_CODE_PATH = Path(__file__).parent / "data" / "jis_x_0401_code.json"
-_JSON_NAME_PATH = Path(__file__).parent / "data" / "jis_x_0401_name.json"
 
-
-with _JSON_CODE_PATH.open("r", encoding="utf-8") as f:
+with resources.files("jp_prefectures_simple.data").joinpath(
+    "jis_x_0401_code.json",
+).open("r", encoding="utf-8") as f:
     _CODE2NAME = json.load(f)
 
 
-with _JSON_NAME_PATH.open("r", encoding="utf-8") as f:
+with resources.files("jp_prefectures_simple.data").joinpath(
+    "jis_x_0401_name.json",
+).open("r", encoding="utf-8") as f:
     _NAME2CODE = json.load(f)
 
 
