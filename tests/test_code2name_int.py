@@ -1,7 +1,11 @@
+"""Tests for code2name function with integer input."""
 from src.jp_prefectures_simple import code2name
 
 
+
 def test_code_int():
+    """Test converting integer prefecture codes to names."""
+
     assert code2name(1) == "北海道"
     assert code2name(2) == "青森県"
     assert code2name(3) == "岩手県"

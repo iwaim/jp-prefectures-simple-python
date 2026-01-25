@@ -1,7 +1,11 @@
+"""Tests for name2code function with string input."""
 from src.jp_prefectures_simple import name2code
 
 
+
 def test_name():
+    """Test converting prefecture names to codes."""
+
     assert name2code("北海道") == "01"
     assert name2code("青森県") == "02"
     assert name2code("岩手県") == "03"
