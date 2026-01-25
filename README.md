@@ -12,8 +12,12 @@ pip install jp-prefectures-simple
 
 ## Usage
 
+### Python API
+
+You can import functions directly from the package:
+
 ```python
-from jp_prefectures_simple.prefs import name2code, code2name
+from jp_prefectures_simple import name2code, code2name
 
 # Convert name to code
 code = name2code("東京都")

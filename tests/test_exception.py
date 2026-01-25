@@ -1,6 +1,6 @@
 import pytest
 
-from src.jp_prefectures_simple.prefs import code2name, name2code
+from src.jp_prefectures_simple import code2name, name2code
 
 
 def test_code2name():

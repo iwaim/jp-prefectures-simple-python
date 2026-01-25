@@ -1,4 +1,4 @@
-from src.jp_prefectures_simple.prefs import name2code
+from src.jp_prefectures_simple import name2code
 
 
 def test_name():

@@ -1,4 +1,4 @@
-from src.jp_prefectures_simple.prefs import code2name
+from src.jp_prefectures_simple import code2name
 
 
 def test_code_str():
