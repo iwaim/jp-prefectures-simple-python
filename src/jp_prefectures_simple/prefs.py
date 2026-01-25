@@ -40,13 +40,13 @@ __all__ = ["code2name", "name2code"]
 with resources.files("jp_prefectures_simple.data").joinpath(
     "jis_x_0401_code.json",
 ).open("r", encoding="utf-8") as f:
-    _CODE2NAME = json.load(f)
+    _CODE2NAME: dict[str, str] = json.load(f)
 
 
 with resources.files("jp_prefectures_simple.data").joinpath(
     "jis_x_0401_name.json",
 ).open("r", encoding="utf-8") as f:
-    _NAME2CODE = json.load(f)
+    _NAME2CODE: dict[str, str] = json.load(f)
 
 
 @overload
